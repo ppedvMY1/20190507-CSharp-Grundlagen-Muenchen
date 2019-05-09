@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace Taschenrechner
 {
     class Rechner
     {
-        public delegate int Rechenoperation(int op1, int op2);
+        public delegate int Rechenoperation(params int[] operanden);
         Rechenoperation rechenoperation;
 
         public Rechner(string operation)
@@ -15,10 +16,10 @@ namespace Taschenrechner
             {
                 case "Addition":
                     {
-                        rechenoperation = new Rechenoperation(Addiere);
+                        rechenoperation = x => x.Aggregate((y, z) => y + z);
                         break;
                     }
-                case "Subtraktion":
+               /* case "Subtraktion":
                     {
                         rechenoperation = new Rechenoperation(delegate(int op1, int op2) {
                             return op1 - op2;
@@ -41,20 +42,25 @@ namespace Taschenrechner
                         };
                         break;
                     }
+                case "Modulo":
+                    {
+                        rechenoperation = (x, y) => x % y;
+                        break;
+                    }*/
                 default:
                     {
                         return;
                     }
             }
         }
-        public int Rechne(int op1, int op2)
+        public int Rechne(params int[] operanden)
         {
-            return rechenoperation(op1, op2);
+            return rechenoperation(operanden);
         }
 
-        public int Addiere(int op1, int op2)
+        public int Addiere(params int[] operanden)
         {
-            return op1 + op2;
+            return operanden.Aggregate((x, y) => x + y);
         }
     }
 }
