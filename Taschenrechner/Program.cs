@@ -15,7 +15,7 @@ namespace Taschenrechner
             Console.WriteLine("Bitte gib den zweiten Operanden ein:");
             var op2 = int.Parse(Console.ReadLine());
 
-            Rechner rechner = new Rechner("");
+            Rechner rechner = new Rechner(operation);
             Console.WriteLine("Das Ergebnis lautet:");
             Console.WriteLine(rechner.Rechne(op1, op2));
 
