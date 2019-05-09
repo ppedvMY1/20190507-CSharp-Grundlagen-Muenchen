@@ -13,14 +13,24 @@ namespace Taschenrechner
         {
             switch(operation)
             {
-                case "Addieren":
+                case "Addition":
                     {
                         rechenoperation = new Rechenoperation(Addiere);
                         break;
                     }
-                case "Subtrahieren":
+                case "Subtraktion":
                     {
-                        rechenoperation = new Rechenoperation(Subtrahiere);
+                        rechenoperation = new Rechenoperation(delegate(int op1, int op2) {
+                            return op1 - op2;
+                        });
+                        break;
+                    }
+                case "Multiplikation":
+                    {
+                        rechenoperation = delegate (int op1, int op2)
+                        {
+                            return op1 * op2;
+                        };
                         break;
                     }
                 default:
@@ -37,10 +47,6 @@ namespace Taschenrechner
         public int Addiere(int op1, int op2)
         {
             return op1 + op2;
-        }
-        public int Subtrahiere(int op1, int op2)
-        {
-            return op1 - op2;
         }
     }
 }
