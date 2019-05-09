@@ -33,6 +33,14 @@ namespace Taschenrechner
                         };
                         break;
                     }
+                case "Division":
+                    {
+                        rechenoperation = (op1, op2) =>
+                        {
+                            return op1 / op2;
+                        };
+                        break;
+                    }
                 default:
                     {
                         return;
