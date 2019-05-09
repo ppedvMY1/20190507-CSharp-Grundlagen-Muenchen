@@ -6,28 +6,32 @@ namespace Taschenrechner
 {
     class Rechner
     {
-        string Operation { get; set; }
+        public delegate int Rechenoperation(int op1, int op2);
+        Rechenoperation rechenoperation;
+
         public Rechner(string operation)
         {
-            this.Operation = operation;
-        }
-        public int Rechne(int op1, int op2)
-        {
-            switch(Operation)
+            switch(operation)
             {
                 case "Addieren":
                     {
-                        return Addiere(op1, op2);
+                        rechenoperation = new Rechenoperation(Addiere);
+                        break;
                     }
                 case "Subtrahieren":
                     {
-                        return Subtrahiere(op1, op2);
+                        rechenoperation = new Rechenoperation(Subtrahiere);
+                        break;
                     }
                 default:
                     {
-                        return int.MinValue;
+                        return;
                     }
             }
+        }
+        public int Rechne(int op1, int op2)
+        {
+            return rechenoperation(op1, op2);
         }
 
         public int Addiere(int op1, int op2)
