@@ -19,14 +19,12 @@ namespace Taschenrechner2
                         rechenoperation = x => x.Aggregate((y, z) => y + z);
                         break;
                     }
-               /* case "Subtraktion":
+                case "Subtraktion":
                     {
-                        rechenoperation = new Rechenoperation(delegate(int op1, int op2) {
-                            return op1 - op2;
-                        });
+                        rechenoperation = x => x.Substract();
                         break;
                     }
-                case "Multiplikation":
+                /*case "Multiplikation":
                     {
                         rechenoperation = delegate (int op1, int op2)
                         {

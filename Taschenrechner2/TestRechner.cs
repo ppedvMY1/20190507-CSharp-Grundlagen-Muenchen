@@ -18,7 +18,7 @@ namespace Taschenrechner2
             ergebnis = rechner.Rechne(99, 2, 3, 10, 99, 12, -1);
             Assert.AreEqual(224, ergebnis);
 
-            rechner.Rechne()
+            rechner.Rechne();
             ergebnis = rechner.Rechne(99, 2, 3, 10, 99, int.MinValue, -1);
             Assert.AreEqual(224, ergebnis);
 

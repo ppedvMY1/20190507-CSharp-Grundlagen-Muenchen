@@ -13,14 +13,12 @@ namespace Taschenrechner2
             Console.WriteLine("Welche Rechenoperation möchtest du durchführen?");
             var operation = Console.ReadLine();
 
-
             var operanden = new List<int>();
 
             Console.WriteLine("Bitte gib die Operanden ein:");
             var eingabe = Console.ReadLine();
 
             var eingabeArray = eingabe.Split(',');
-
             foreach (var item in eingabeArray)
             {
                 if (int.TryParse(item, out int res))
