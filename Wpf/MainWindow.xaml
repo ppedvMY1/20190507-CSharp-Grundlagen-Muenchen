@@ -1,0 +1,21 @@
+﻿<Window x:Class="Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Datei">
+                    <MenuItem Header="Öffnen" Click="Oeffnen_Click">
+                      </MenuItem>
+                    <MenuItem Header="Speichern" Click="Speichern_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+            <TextBox Name="EditorTextBox"  TextWrapping="Wrap" Foreground="{Binding TextFarbe, UpdateSourceTrigger=PropertyChanged}"  Text="{Binding TextInhalt, UpdateSourceTrigger=PropertyChanged}" Width="auto" Margin="0" AcceptsTab="True" AcceptsReturn="True"/>
+        </DockPanel>
+    </Grid>
+</Window>
