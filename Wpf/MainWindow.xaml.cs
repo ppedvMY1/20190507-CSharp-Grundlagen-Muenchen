@@ -36,8 +36,8 @@ namespace Wpf
         private void Speichern_Click(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.FileName = "inhalt.bin";
-            saveFileDialog.Filter = "Textdatei|*.bin";
+            saveFileDialog.FileName = "inhalt.xml";
+            saveFileDialog.Filter = "Textdatei|*.xml";
             saveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialog.RestoreDirectory = true;
             if ((bool)saveFileDialog.ShowDialog())
@@ -53,8 +53,8 @@ namespace Wpf
         private void Oeffnen_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.FileName = "inhalt.bin";
-            openFileDialog.Filter = "Textdatei|*.bin";
+            openFileDialog.FileName = "inhalt.xml";
+            openFileDialog.Filter = "Textdatei|*.xml";
             openFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             openFileDialog.RestoreDirectory = true;
             if ((bool)openFileDialog.ShowDialog())
