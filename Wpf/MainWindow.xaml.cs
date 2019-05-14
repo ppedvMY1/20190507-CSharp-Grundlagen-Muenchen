@@ -17,7 +17,7 @@ using Microsoft.Win32;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml;
 using System.Xml.Serialization;
-using System.Data.SQLite;
+//using System.Data.SQLite;
 
 namespace Wpf
 {
@@ -37,14 +37,14 @@ namespace Wpf
 
         public void GenerateDatabase()
         {
-            SQLiteConnection.CreateFile("inhalt.sqlite");
+            /*SQLiteConnection.CreateFile("inhalt.sqlite");
             SQLiteConnection SqLiteConnection = new SQLiteConnection("Data Source = inhalt.sqlite; Version=3;");
             SqLiteConnection.Open();
 
             string sql = "CREATE TABLE texte(id integer primary key autoincrement, textinhalt TEXT, textfarben TEXT)";
             SQLiteCommand command = new SQLiteCommand(sql, SqLiteConnection);
             command.ExecuteNonQuery();
-
+            */
 
         }
         
@@ -52,8 +52,12 @@ namespace Wpf
 
         private void Speichern_Click(object sender, RoutedEventArgs e)
         {
+            // *************************************************************************
             // Hiermit können wir unsere Daten in eine Datenbank speichern, wichtig dabei ist die Parametrisierung
             // der zu speichernden Werte (siehe SQL-Injection)
+            // Aufgrund der Dateigröße musste ich das NuGet Paket : "System.Data.SQLite.Core" leider entfernen
+            // bitte das NuGet Paket installieren, um diesen Code auszuführen
+            // *************************************************************************s
             
             /*SQLiteConnection SqLiteConnection = new SQLiteConnection("Data Source = inhalt.sqlite; Version=3;");
             SqLiteConnection.Open();
